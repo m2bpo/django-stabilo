@@ -5,7 +5,8 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('label',)}
 
 class KeywordAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('category', 'keyword')
+    list_filter = ('category',)
 
 
 admin.site.register(Category, CategoryAdmin)
